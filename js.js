@@ -31,18 +31,16 @@ class Funcoes{
     }
 }
 
-const url = 'https://randomuser.me/api';
-
-const table = document.getElementById('table')
 let funcao = new Funcoes()
 
+
+const url = 'https://randomuser.me/api';
+const table = document.getElementById('table')
 let usuarios = Array();
 
 async function consultar(){
     const dados = await fetch(url);
-    console.log(dados)
     const resultado = await dados.json();
-    console.log(resultado)
     const infos = await resultado.results;
     
     infos.map(info => usuarios.push(info));
